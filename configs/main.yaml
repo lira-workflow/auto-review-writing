@@ -1,0 +1,61 @@
+# Argument configurations for different pipeline components 
+# (see other config files for details on some of these metrics, as they should be the same across systems)
+base:
+  # The dataset
+  dataset: "srg" # Currently only supports "srg" (SciReviewGen)
+  temperature: 0.0
+  llm_seed: 42
+
+  # Ensure the below two variables are consistent with how the dataset was created, as it influences the lookup
+  n_samples: 125
+  seed: 42
+
+  # For reference group analysis
+  group_size: 50
+
+  # Batch Size for encoding (in case citation quality evaluation is toggled on)
+  batch_size: 512
+
+  # For content control
+  n_sections: 8 # Same as in AutoSurvey, but this will instead be used to define a range
+  n_subsections: 4
+  section_len: 1_000
+
+  # Agentic components
+  researcher_model: "none"
+  writer_model: "gpt4o-mini-240718"
+  editor_model: "gpt4o-mini-240718"
+  reviewer_model: "gpt4o-mini-240718"
+  n_revisions: 3 # The maximum number of revisions to perform
+  max_tokens_gpt: 128_000 # Needed as responses may take longer depending on the input
+  max_tokens_other: 128_000
+  fulltext: False
+  use_retriever: False
+  overwrite_responses: False
+
+  # File handling
+  data_dir: data
+  db_dir: database
+  final_papers_dir: "./articles" 
+  final_papers_file: "papers.csv"
+  eval_result_dir: "results"
+  temp_dir: temp # For saving the paper analyses
+
+  # For evaluation
+  model: "gpt4o-mini-240718" # For citation quality evaluation
+  max_tokens: 128_000
+  rounding: 3
+  n_jobs: -2
+  embedding_model: "nomic-ai/nomic-embed-text-v1"
+  embedding_max_tokens: 8192 # The maximum number of tokens the embedding model can take in
+
+  # Selecting which evaluations to do
+  do_rouge: True
+  do_recall: True
+  do_citation: True
+  do_prometheus: True
+  overwrite_results: False
+
+  # Dataset choices
+  dataset_choices:
+  - srg # ScienceReviewGen

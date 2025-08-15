@@ -1,0 +1,69 @@
+# Argument configurations for the MASS pipeline components
+base:
+  model: gpt4o-mini-240718 # The specific model to use
+  dataset: srg # Scroll down for the available options
+  db_dir: database # For evaluation
+  method: base # Scroll down for the available options
+  temperature: 0.0 # The model output temperature
+  max_tokens: 128_000
+
+  # For parallelization
+  n_jobs: -4 # Use negative values for joblib to select (almost) the maximum number of concurrent jobs
+
+  # Ensure the below two variables are consistent with how the dataset was created, as it influences the lookup
+  n_samples: 125
+  seed: 42
+
+  # Rounding if desired
+  rounding: 3
+
+  # Batch Size for encoding (in case citation quality evaluation is toggled on)
+  batch_size: 512
+
+  # Embedding model to use for retrieval (and citation quality checking)
+  embedding_model: "nomic-ai/nomic-embed-text-v1"
+
+  # Folder containing the (meta)data files
+  # SciReviewGen dataset metadata
+  data_dir: data
+
+  # Base folder name (NOTE: This is where the entire pipeline looks to find the other directories listed after this)
+  # (For example, "baseline_and_mass/[METHOD]/processed_dir")
+  base_dir: baseline_and_mass
+
+  # Structured References (by LLM)
+  structured_ref_dir: structured_references
+
+  # Title and Abstract
+  title_abstract_dir: title_and_abstract
+
+  # Chapter Contents
+  chapter_contents_dir: chapter_contents
+
+  # Conclusion
+  conclusion_dir: conclusion
+
+  # Final Papers Output
+  final_papers_dir: "./articles" 
+  final_papers_file: papers.csv
+
+  # Evaluation Results Output
+  eval_result_dir: results
+
+  # Whether to overwrite existing results or not
+  overwrite_results: False
+
+  # Whether not to do certain evaluations
+  do_rouge: True
+  do_recall: True
+  do_citation: True
+  do_prometheus: True
+
+  # Method choices
+  method_choices:
+  - "base" # Naïve generation (generate a review directly based on the references)
+  - "mass" # Generation using the MASS-survey method
+
+  # Dataset choices
+  dataset_choices:
+  - "srg" # ScienceReviewGen

@@ -1,0 +1,4 @@
+# Argument configurations for aggregation
+base:
+  result_dir: "results"
+  rounding: 3

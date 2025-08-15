@@ -1,0 +1,45 @@
+# Settings for the Prometheus evaluator LLM
+base:
+  # Required fields
+  output_dir: "results/prometheus"
+
+  # Model configurations
+  quantization: "fp8"
+
+  # Optional fields with default values
+  n_reviews: 3
+  rubric_file: "utils/eval_metrics/prometheus/eval_rubric_5.json"
+  model: "prometheus-eval/prometheus-7b-v2.0"
+  disable_sample: false
+  temperature: 0.01
+  top_p: 0.95
+  max_new_tokens: 512
+  repetition_penalty: 1.03
+
+  # Choices for the device
+  device_choices:
+  - "cuda:0"
+  - "cpu"
+  - "auto"
+
+  # Choices for the quantization
+  quantization_choices:
+    - "gptq"
+    - "awq"
+    - "int4"
+    - "int8"
+    - "fp8"
+
+  # Enforce Eager
+  enforce_eager: True
+
+  # GPU Memory Utilization
+  gpu_memory_utilization: 0.8
+
+  # Choices for the model parameter
+  # NOTE: Some of these models require a notable amount of GPU to run
+  model_choices:
+    - "prometheus-eval/prometheus-13b-v1.0"
+    - "prometheus-eval/prometheus-7b-v1.0"
+    - "prometheus-eval/prometheus-7b-v2.0"
+    - "prometheus-eval/prometheus-8x7b-v2.0"

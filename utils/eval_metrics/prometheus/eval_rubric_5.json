@@ -1,0 +1,29 @@
+[
+    {
+        "criteria": "Coverage: does the review encapsulate all relevant aspects of the topic, ensuring comprehensive discussion on both central and peripheral topics?",
+        "criteria_description": "Coverage: Coverage assesses the extent to which the review encapsulates all relevant aspects of the topic, ensuring comprehensive discussion on both central and peripheral topics.",
+        "score1_description": "The literature review section has very limited coverage, only touching on a small portion of the topic and lacking discussion on key areas.",
+        "score2_description": "The literature review section covers some parts of the topic but has noticeable omissions, with significant areas either underrepresented or missing.",
+        "score3_description": "The literature review section is generally comprehensive in coverage but still misses a few key points that are not fully discussed.",
+        "score4_description": "The literature review section covers most key areas of the topic comprehensively, with only very minor topics left out.",
+        "score5_description": "The literature review section comprehensively covers all key and peripheral topics, providing detailed discussions and extensive information."
+    },
+    {
+        "criteria": "Structure: Are the sections and subsections logically organized and coherent, ensuring that they are logically connected?",
+        "criteria_description": "Structure: Structure evaluates the logical organization and coherence of sections and subsections, ensuring that they are logically connected.",
+        "score1_description": "The literature review outline lacks logic, with no clear connections between sections, making it difficult to understand the overall framework.",
+        "score2_description": "The literature review outline has weak logical flow with some content arranged in a disordered or unreasonable manner.",
+        "score3_description": "The literature review outline has a generally reasonable logical structure, with most content arranged orderly, though some links and transitions could be improved such as repeated subsections.",
+        "score4_description": "The literature review outline has good logical consistency, with content well arranged and natural transitions, only slightly rigid in a few parts.",
+        "score5_description": "The literature review outline is tightly structured and logically clear, with all sections and content arranged most reasonably, and transitions between adjacent sections smooth without redundancy."
+    },
+    {
+        "criteria": "Relevance: Does the content of the review align with the research topic and maintain a clear focus?",
+        "criteria_description": "Relevance: Relevance measures how well the content of the review aligns with the research topic and maintain a clear focus.",
+        "score1_description": "The literature review section is outdated or unrelated to the field it purports to review, offering no alignment with the topic.",
+        "score2_description": "The literature review section is somewhat on topic but with several digressions; the core subject is evident but not consistently adhered to.",
+        "score3_description": "The literature review section is generally on topic, despite a few unrelated details.",
+        "score4_description": "The literature review section is mostly on topic and focused; the narrative has a consistent relevance to the core subject with infrequent digressions.",
+        "score5_description": "The literature review section is exceptionally focused and entirely on topic; the article is tightly centered on the subject, with every piece of information contributing to a comprehensive understanding of the topic."
+    }
+]

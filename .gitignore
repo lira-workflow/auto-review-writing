@@ -1,0 +1,35 @@
+# Standard ignored files
+.venv
+.vscode
+.DS_Store
+**/__pycache__
+
+# Data files and folders
+tmp
+temp
+data/*/
+articles/*/
+database
+checkpoint
+processed
+baseline_and_mass/mass
+
+# Output files and folders
+figures
+output
+results_old
+results/*/
+results/*.csv
+results/*.json
+outputs
+temp_analysis
+**/costs
+**/survey
+**/outlines
+
+# MASS pipeline outputs
+structured_references
+title_and_abstract
+chapter_contents
+conclusion
+final_papers

@@ -1,0 +1,58 @@
+base:
+  model: gpt4o-mini-240718 # Which model to use (for OpenAI; select a GPT model from a list provided)
+  gpu: "0" # Which gpu to use based on ID. Note: Probably not useful for devices without CUDA support (notably some Mac devices)
+  dataset: srg # Currently only supports "srg" (SciReviewGen)
+  data_dir: data # The location containing all data `.csv's`
+  db_dir: database
+  final_papers_dir: articles
+  temperature: 0.0
+  max_tokens: 128_000
+
+  # To save the individual components
+  component_dir: autosurvey # Where the individual review part folders get saved to
+  outline_dir: outlines
+  survey_dir: survey
+  cost_dir: costs
+  # The output will be subdirectories such as: "autosurvey/outlines"
+
+  # Ensure the below two variables are consistent with how the dataset was created, as it influences the lookup
+  n_samples: 125
+  seed: 42
+
+  # For parallelization
+  n_jobs: 1 # Use negative values for joblib to select (almost) the maximum number of concurrent jobs
+
+  # Rounding if desired
+  rounding: 3
+
+  # Batch Size for encoding
+  batch_size: 512
+
+  # Evaluation Results Output
+  eval_result_dir: results
+
+  # Whether to overwrite existing results or not
+  overwrite_results: False
+
+  # The number of sections in the outline (this is the number defined in the paper)
+  section_num: 8
+
+  # The length of each subsection
+  subsection_len: 700
+
+  # The number of references to use for RAG
+  rag_num: 60
+
+  # Embedding model to use for retrieval (and citation quality checking)
+  embedding_model: "nomic-ai/nomic-embed-text-v1"
+  embedding_max_tokens: 8192 # The maximum number of tokens the embedding model can take in
+
+  # Whether not to do certain evaluations
+  do_rouge: True
+  do_recall: True
+  do_citation: True
+  do_prometheus: True
+
+  # Dataset choices
+  dataset_choices:
+  - srg # ScienceReviewGen
