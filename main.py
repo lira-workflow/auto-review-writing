@@ -223,6 +223,7 @@ def main(cfg: DictConfig):
                     setting_name=setting_name[1:],  # To skip the initial underscore
                     overwrite_responses=args.overwrite_responses,
                     use_retriever=args.use_retriever,
+                    temp_dir=args.temp_dir,
                 )
 
                 # Save the paper and reference dictionary
