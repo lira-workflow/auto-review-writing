@@ -1,7 +1,11 @@
 # **Agentic Workflow for Automated Literature Review Writing** ⚙️
 
-This is the repository for the "Agentic Workflow for Automated Literature Review Writing" project.
-Note that all scripts have a `.bash` or `.py` version (`.py` scripts have no `.bash` version), which can all be found [here](scripts).
+[![Paper](https://img.shields.io/badge/ArXiv-PDF-red)](https://arxiv.org/abs/2510.05138)
+[![Conference](https://img.shields.io/badge/Conference-IAAI%202026%20(Coming%20Soon)%20-blue)](https://arxiv.org/abs/2510.05138)
+
+This is the repository for **LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Writing**.
+
+Esentially all scripts have a `.bash` or `.py` version (`.py` scripts have no `.bash` version), which can all be found [here](scripts).
 In addition, adjusting any configurations for the code can be done via the configs [here](configs).
 
 # **The System Name**
@@ -21,7 +25,6 @@ This repository was built using `Python 3.10.4`. Also, *ensure that you have suf
 To setup this repository, simply run the following:
 
 ```sh
-
 git clone https://github.com/elsevier-research/ds-automated-lit-review.git
 cd ds-automated-lit-review
 
@@ -30,16 +33,13 @@ pip install -r requirements.txt
 
 # Or if using conda, install the `.yaml` directly
 conda env create -f environment.yaml
-
 ```
 
 > [!IMPORTANT]
 > Because the repository currently requires the SpaCy transformers and sciSpacy large model, these lines also needs to be run:
 > 
 >   ```sh
->   
 >   pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_lg-0.5.4.tar.gz
->   
 >   ```
 > 
 > On top of this, there are potential issues that may occur due to `sciSpacy` requiring `nmslib`. See [here](https://github.com/allenai/scispacy?tab=readme-ov-file#installation-note-nmslib) for more details. 
@@ -55,9 +55,7 @@ conda env create -f environment.yaml
 The datasets used for this project include an internal (private; only accessible via the project page which also contain *instructions on how to handle it*) and external (SciReviewGen) dataset. The external one can be downloaded using the following script:
 
 ```sh
-
 python scripts/download_srg.py
-
 ```
 
 This also includes an automatic download of all the metadata from Semantic Scholar for referencing, as the SciReviewGen dataset does not have this on its own. Simply adjust the seed and number of samples to customize the proportion of the data to use. Do keep in mind that this value needs to be adjusted for all configuration files.
@@ -65,9 +63,7 @@ This also includes an automatic download of all the metadata from Semantic Schol
 The data entries may need to be cleaned beforehand (for example, to remove the word "Abstract" from the beginning, formatting the table to match the determined format). This can be performed by running the following script:
 
 ```sh
-
 python scripts/clean_data.py
-
 ```
 
 
@@ -76,7 +72,6 @@ python scripts/clean_data.py
 Some experimental settings (for the main workflow only) require the use of `ollama` as an alternative model. To install it, simply go [here](https://ollama.com/download) and follow the instructions present there. Then, simply run the following (requires additional memory depending on the model specified):
 
 ```sh
-
 # To download the model
 # (This can be any model available on ollama, though it's recommended to use a model with a larger context window)
 ollama run gemma3:4b
@@ -91,7 +86,6 @@ ollama run gemma3:4b
 # Exit and then load the new model
 /exit
 ollama run gemma3:4b_128k
-
 ```
 
 Once this has been done, you can now perform the local model experiments! Just make sure ollama is running the correct model in the background.
@@ -101,7 +95,6 @@ Once this has been done, you can now perform the local model experiments! Just m
 For the remote model, `AzureOpenAI` is utilised, meaning an API and several other configurations are necessary. Please set the following variables in your environment to get started with the remote models:
 
 ```sh
-
 # For macOS/Linux
 # Temporarily (only lasts in current terminal session)
 export AZURE_OPENAI_URL_BASE="[YOUR_URL_BASE]"
@@ -118,7 +111,6 @@ echo 'export AZURE_OPENAI_API_KEY="[YOUR_ORGANIZATION_KEY]"'
 set AZURE_OPENAI_URL_BASE="[YOUR_URL_BASE]"
 set AZURE_OPENAI_API_VERSION="[YOUR_API_VERSION]"
 set AZURE_OPENAI_API_KEY="[YOUR_ORGANIZATION_KEY]"
-
 ```
 
 ## **Running**
@@ -128,7 +120,6 @@ set AZURE_OPENAI_API_KEY="[YOUR_ORGANIZATION_KEY]"
 For comparison with the baseline methods, please run the following:
 
 ```sh
-
 # For the naive and MASS-Survey baseline
 # Be sure to adjust the method to `base` and `mass` respectively
 # in the `baseline_mass.yaml` file.
@@ -136,7 +127,6 @@ python run_baseline_mass.py
 
 # For the AutoSurvey baseline
 python run_autosurvey.py
-
 ```
 
 > [!NOTE]
@@ -151,12 +141,9 @@ For clarity, the following folders will be where you should look for certain fil
 
 > [!TIP]
 > As the main scripts utilize `hydra`, you can override arguments in the terminal by providing them in the following form:
-> 
 >   ```sh
->   
 >   # Provide the group header name (always `base`) and then the arguments as a dictionary
 >   python run_baseline_mass.py '+base={method: mass}'
->   
 >   ```
 
 ### **Our Method**
@@ -164,17 +151,13 @@ For clarity, the following folders will be where you should look for certain fil
 To run and evaluate our method, simply run:
 
 ```sh
-
 python main.py
-
 ```
 
 For an easy overview of all results, run the below script:
 
 ```sh
-
 python scripts/aggregate_results.py
-
 ```
 
 This returns all the results as a `.csv` file by default in the `results` folder.
