@@ -1,7 +1,7 @@
 # **Agentic Workflow for Automated Literature Review Writing** ⚙️
 
 [![Paper](https://img.shields.io/badge/ArXiv-PDF-red)](https://arxiv.org/abs/2510.05138)
-[![Conference](https://img.shields.io/badge/Conference-IAAI%202026%20(Coming%20Soon)%20-blue)](https://arxiv.org/abs/2510.05138)
+[![Conference](https://img.shields.io/badge/Conference-IAAI%202026%20%20-blue)](https://ojs.aaai.org/index.php/AAAI/article/view/41489)
 
 This is the repository for **LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Writing**.
 
@@ -167,6 +167,24 @@ This returns all the results as a `.csv` file by default in the `results` folder
 The SciReviewGen dataset is released under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). Furthermore, SciReviewGen is created based on the Semantic Scholar Open Research Corpus (S2ORC), which is released under the [ODC-By 1.0](https://opendatacommons.org/licenses/by/1-0/) License.
 
 ## **Citation**
+
+It would be appreciated for any works referring to this project to cite it as the following:
+
+```bibtex
+
+@article{Go2026LiRA, 
+    title={LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation}, 
+    volume={40}, 
+    url={https://ojs.aaai.org/index.php/AAAI/article/view/41489}, 
+    DOI={10.1609/aaai.v40i47.41489}, 
+    number={47}, 
+    journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+    author={Go, Gregory Hok Tjoan and Ly, Khang and Søgaard, Anders and Tabatabaei, Seyed Amin and Rijke, Maarten de and Chen, Xinyi}, year={2026}, 
+    month={Mar.}, 
+    pages={40456-40464} 
+    }
+
+```
 
 It is advised to cite the papers adapted for this repository and project via the citations below:
 
