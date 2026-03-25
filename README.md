@@ -173,16 +173,17 @@ It would be appreciated for any works referring to this project to cite it as th
 ```bibtex
 
 @article{Go2026LiRA, 
-    title={LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation}, 
-    volume={40}, 
-    url={https://ojs.aaai.org/index.php/AAAI/article/view/41489}, 
-    DOI={10.1609/aaai.v40i47.41489}, 
-    number={47}, 
-    journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
-    author={Go, Gregory Hok Tjoan and Ly, Khang and Søgaard, Anders and Tabatabaei, Seyed Amin and Rijke, Maarten de and Chen, Xinyi}, year={2026}, 
-    month={Mar.}, 
-    pages={40456-40464} 
-    }
+	title        = {LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation},
+	author       = {Go, Gregory Hok Tjoan and Ly, Khang and Søgaard, Anders and Tabatabaei, Seyed Amin and Rijke, Maarten de and Chen, Xinyi},
+	year         = 2026,
+	month        = {Mar.},
+	journal      = {Proceedings of the AAAI Conference on Artificial Intelligence},
+	volume       = 40,
+	number       = 47,
+	pages        = {40456--40464},
+	doi          = {10.1609/aaai.v40i47.41489},
+	url          = {https://ojs.aaai.org/index.php/AAAI/article/view/41489},
+}
 
 ```
 
